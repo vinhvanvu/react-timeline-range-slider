@@ -12,9 +12,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, "src"),
-        exclude: /node_modules/,
+        test: /\.(js|jsx)$/,
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "node_modules/react-timeline-range-slider"),
+        ],
         use: {
           loader: "babel-loader",
           options: {
@@ -28,6 +30,7 @@ module.exports = {
       },
     ],
   },
+
   externals: {
     react: "commonjs react",
   },
